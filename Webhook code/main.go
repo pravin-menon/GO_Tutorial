@@ -10,13 +10,15 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-var csvFilePath = "/Users/pravinmenon/Documents/Coding/GO_Tutorial/Webhook code/data.csv"
+// var csvFilePath = "/Users/pravinmenon/Documents/Coding/GO_Tutorial/Webhook code/data.csv"
+
+var csvFilePath = "https://docs.google.com/spreadsheets/d/1e5fBizApsJuoiS8F_k5sjP3F03MaBI0kz63ByWMx8nk/edit?usp=sharing"
 
 func main() {
 	// Create a new Gin router
 	router := gin.Default()
-	router.ForwardedByClientIP = true
-	router.SetTrustedProxies([]string{"127.0.0.1"})
+	// router.ForwardedByClientIP = true
+	// router.SetTrustedProxies([]string{"127.0.0.1"})
 
 	// Define a route for handling the webhook POST request
 	router.POST("/webhook", HandleWebhook)
